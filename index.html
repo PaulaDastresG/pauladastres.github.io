@@ -14,7 +14,17 @@
 
   <!-- General styling for layout and formatting -->
   <style>
-    .main-container { max-width: 940px; margin-left: auto; margin-right: auto; }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-container {
+      max-width: 940px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     img { max-width: 100%; }
     h1 { font-size: 34px; }
     h1.title { font-size: 38px; }
@@ -25,58 +35,86 @@
     h6 { font-size: 12px; }
     code { color: inherit; background-color: rgba(0, 0, 0, 0.04); }
     pre:not([class]) { background-color: white }
+
+    /* Navigation bar overlay (transparent) */
+    .navbar.navbar-default {
+      background-color: transparent;
+      border: none;
+      z-index: 1000;
+    }
+
+    .navbar.navbar-default .navbar-brand,
+    .navbar.navbar-default .navbar-nav > li > a {
+      color: #333;
+    }
+
+    .navbar.navbar-default .navbar-nav > li > a:hover {
+      color: #000;
+    }
+
+    /* Hero banner (80% wide, centered) */
+    .hero-banner {
+      width: 80%;
+      height: 350px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Space to prevent content from hiding behind fixed navbar */
+    body {
+      padding-top: 60px;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Hero Banner (80% width, centered) -->
-  <div style="width: 80%; height: 350px; overflow: hidden; margin: 50px auto 0 auto; position: relative; border-radius: 8px;">
-    <img src="files/hero_banner.png"
-         alt="Hero banner"
-         style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-  </div>
-
-  <!-- Begin main page container -->
-  <div class="container-fluid main-container">
-
-    <!-- Navigation Bar (fixed at top of page) -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <!-- Mobile navbar collapse button -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-          </button>
-          <!-- Brand name -->
-          <a class="navbar-brand" href="index.html">Paula Dastres</a>
-        </div>
-        <!-- Navigation menu links -->
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">About Me</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
-          </ul>
-          <!-- Email icon on the right -->
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="mailto:pfdastres@gmail.com"><span class="fa fa-envelope fa-lg"></span></a></li>
-          </ul>
-        </div>
+  <!-- Navigation Bar (fixed, transparent, dark text) -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Paula Dastres</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">About Me</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="mailto:pfdastres@gmail.com"><span class="fa fa-envelope fa-lg"></span></a></li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <!-- Intro section with circular image and vertically centered text -->
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <img src="files/hero_banner.png" alt="Hero banner">
+  </div>
+
+  <!-- Main Content -->
+  <div class="container-fluid main-container">
+
+    <!-- Intro section -->
     <div style="display: flex; align-items: center; justify-content: flex-start; margin-top: 40px; flex-wrap: wrap;">
-
-      <!-- Circular profile image -->
       <div style="flex: 0 0 260px; text-align: left; margin: 10px 30px 10px 0px;">
         <img src="files/banner.jpeg" 
              alt="Profile photo"
              style="width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 3px solid #ccc;">
       </div>
-
-      <!-- Name and info -->
       <div style="flex: 1 1 300px; max-width: 600px; margin: 10px;">
         <div style="margin-top: 60px;">
           <h1 style="margin-top: 0;">Paula Dastres</h1>
@@ -106,7 +144,7 @@
 
   </div> <!-- End main-container -->
 
-  <!-- Load required scripts -->
+  <!-- Scripts -->
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
   <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
