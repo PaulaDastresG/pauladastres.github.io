@@ -1,68 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Basic page setup -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Me</title>
 
+  <!-- Load Bootstrap CSS and Font Awesome icons -->
   <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
   <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
   <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
   <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 
+  <!-- General styles for fonts, spacing, layout -->
   <style>
     .main-container { max-width: 940px; margin-left: auto; margin-right: auto; }
-    img { max-width:100%; }
-    h1 {font-size: 34px;}
-    h1.title {font-size: 38px;}
-    h2 {font-size: 30px;}
-    h3 {font-size: 24px;}
-    h4 {font-size: 18px;}
-    h5 {font-size: 16px;}
-    h6 {font-size: 12px;}
-    code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+    img { max-width: 100%; }
+    h1 { font-size: 34px; }
+    h1.title { font-size: 38px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 24px; }
+    h4 { font-size: 18px; }
+    h5 { font-size: 16px; }
+    h6 { font-size: 12px; }
+    code { color: inherit; background-color: rgba(0, 0, 0, 0.04); }
     pre:not([class]) { background-color: white }
   </style>
 </head>
 
 <body>
+  <!-- Begin page container -->
   <div class="container-fluid main-container">
 
-    <!-- Banner with overlay -->
-    <div style="position: relative; text-align: center; margin-top: 20px;">
-      <img src="files/banner.jpeg" style="width: 100%; max-height: 350px; object-fit: cover;">
+    <!-- Banner Section with Overlay: includes background image, circular headshot, and intro text -->
+    <div style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+      <!-- Background banner image -->
+      <img src="files/banner.jpeg" 
+           style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+      
+      <!-- Overlay container: circular image + text -->
       <div style="
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 1000px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         color: white;
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 20px 30px;
-        border-radius: 10px;
-        font-family: sans-serif;">
-        <h1 style="margin: 0; font-size: 32px;">Paula Dastres</h1>
-        <p style="margin: 5px 0 0; font-size: 18px;">
-          PhD Student · Development Economics · Gender Inequality
-        </p>
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        border-radius: 15px;
+        font-family: sans-serif;
+      ">
+        <!-- Circular profile photo -->
+        <div>
+          <img src="files/2022headshot.JPG" 
+               style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid white;">
+        </div>
+
+        <!-- Name, role, and keywords -->
+        <div style="margin-left: 30px; text-align: left;">
+          <h1 style="margin: 0; font-size: 36px;">Paula Dastres</h1>
+          <p style="font-size: 20px; margin-top: 10px;">
+            PhD Student in Economics<br>
+            University of Wisconsin–Madison<br>
+            Development · Gender Inequality · Labor
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Navbar -->
+    <!-- Navigation Bar (fixed at top of page) -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
+        <!-- Navigation menu on mobile -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
+          <!-- Brand name on the left -->
           <a class="navbar-brand" href="index.html">Paula Dastres</a>
         </div>
+        <!-- Navigation menu links -->
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.html">About Me</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
           </ul>
+          <!-- Email icon on the right -->
           <ul class="nav navbar-nav navbar-right">
             <li><a href="mailto:pfdastres@gmail.com"><span class="fa fa-envelope fa-lg"></span></a></li>
           </ul>
@@ -70,25 +99,20 @@
       </div>
     </div>
 
-    <!-- Main content -->
+    <!-- Section Header -->
     <div id="header">
       <h1 class="title toc-ignore">About Me</h1>
     </div>
 
-    <p>&nbsp;</p>
-    <center>
-      <img src="files/2022headshot.JPG" style="width:99%">
-    </center>
-    <p>&nbsp;</p>
+    <!-- Paragraph with intro summary -->
     <p><font size="3">
       Welcome! I’m a PhD student in Economics at the University of Wisconsin–Madison. 
       My research focuses on gender inequality, labor markets, and development economics.
     </font></p>
-    <p>&nbsp;</p>
 
-  </div>
+  </div> <!-- End main-container -->
 
-  <!-- Bootstrap + scripts -->
+  <!-- Load jQuery, Bootstrap, and Highlight.js scripts -->
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
   <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -100,3 +124,4 @@
   </script>
 </body>
 </html>
+
