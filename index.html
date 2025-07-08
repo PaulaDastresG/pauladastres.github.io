@@ -12,7 +12,7 @@
   <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
   <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 
-  <!-- General styles for fonts, spacing, layout -->
+  <!-- General styling for layout and formatting -->
   <style>
     .main-container { max-width: 940px; margin-left: auto; margin-right: auto; }
     img { max-width: 100%; }
@@ -29,59 +29,18 @@
 </head>
 
 <body>
-  <!-- Begin page container -->
+  <!-- Begin main page container -->
   <div class="container-fluid main-container">
-
-    <!-- Banner Section with Overlay: includes background image, circular headshot, and intro text -->
-    <div style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
-      <!-- Background banner image -->
-      <img src="files/banner.jpeg" 
-           style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-      
-      <!-- Overlay container: circular image + text -->
-      <div style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        max-width: 1000px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 30px;
-        border-radius: 15px;
-        font-family: sans-serif;
-      ">
-        <!-- Circular profile photo -->
-        <div>
-          <img src="files/2022headshot.JPG" 
-               style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid white;">
-        </div>
-
-        <!-- Name, role, and keywords -->
-        <div style="margin-left: 30px; text-align: left;">
-          <h1 style="margin: 0; font-size: 36px;">Paula Dastres</h1>
-          <p style="font-size: 20px; margin-top: 10px;">
-            PhD Student in Economics<br>
-            University of Wisconsin–Madison<br>
-            Development · Gender Inequality · Labor
-          </p>
-        </div>
-      </div>
-    </div>
 
     <!-- Navigation Bar (fixed at top of page) -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
-        <!-- Navigation menu on mobile -->
+        <!-- Mobile navbar collapse button -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
-          <!-- Brand name on the left -->
+          <!-- Brand name -->
           <a class="navbar-brand" href="index.html">Paula Dastres</a>
         </div>
         <!-- Navigation menu links -->
@@ -99,26 +58,43 @@
       </div>
     </div>
 
-    <!-- Section Header -->
+    <!-- Intro section with circular image and text side-by-side -->
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 80px; flex-wrap: wrap;">
+
+      <!-- Circular profile image -->
+      <div style="flex: 0 0 180px; text-align: center; margin: 20px;">
+        <img src="files/banner.jpeg" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid #ccc;">
+      </div>
+
+      <!-- Name and info -->
+      <div style="flex: 1 1 300px; max-width: 600px; margin: 20px;">
+        <h1 style="margin-top: 0;">Paula Dastres</h1>
+        <p style="font-size: 16px; margin-bottom: 5px;">PhD Student in Economics</p>
+        <p style="font-size: 16px; margin-bottom: 5px;">University of Wisconsin–Madison</p>
+        <p style="font-size: 16px;">Development · Gender Inequality · Labor</p>
+      </div>
+    </div>
+
+    <!-- Section header -->
     <div id="header">
       <h1 class="title toc-ignore">About Me</h1>
     </div>
 
-    <!-- Paragraph with intro summary -->
+    <!-- About Me paragraph -->
     <p><font size="3">
       Welcome! I’m a PhD student in Economics at the University of Wisconsin–Madison. 
       My research lies at the intersection of development economics, labor markets, and gender inequality. 
       I’m especially interested in how social norms and structural barriers shape individuals’ decisions, 
       particularly for women in low-income contexts. I aim to use field experiments and experimental economics 
       to study questions of discrimination and decision-making, with a focus on real-world mechanisms behind persistent inequalities.
-      
+      <br><br>
       Before starting my PhD, I completed a Master of Arts in Public Policy with a Certificate in Research Methods at the University 
       of Chicago’s Harris School of Public Policy.
     </font></p>
 
   </div> <!-- End main-container -->
 
-  <!-- Load jQuery, Bootstrap, and Highlight.js scripts -->
+  <!-- Load required scripts -->
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
   <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -130,4 +106,3 @@
   </script>
 </body>
 </html>
-
