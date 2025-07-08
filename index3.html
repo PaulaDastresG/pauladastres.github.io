@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Basic page setup -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me</title>
+
+  <!-- Load Bootstrap CSS and Font Awesome icons -->
+  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+  <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+
+  <!-- General styling for layout and formatting -->
+  <style>
+    .main-container { max-width: 940px; margin-left: auto; margin-right: auto; }
+    img { max-width: 100%; }
+    h1 { font-size: 34px; }
+    h1.title { font-size: 38px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 24px; }
+    h4 { font-size: 18px; }
+    h5 { font-size: 16px; }
+    h6 { font-size: 12px; }
+    code { color: inherit; background-color: rgba(0, 0, 0, 0.04); }
+    pre:not([class]) { background-color: white }
+  </style>
+</head>
+
+<body>
+
+  <!-- Full-width Hero Banner (outside main container) -->
+  <div style="width: 100%; height: 350px; overflow: hidden; margin-top: 50px; position: relative;">
+    <img src="files/hero_banner.png"
+         alt="Hero banner"
+         style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+  </div>
+
+  <!-- Begin main page container -->
+  <div class="container-fluid main-container">
+
+    <!-- Navigation Bar (fixed at top of page) -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Mobile navbar collapse button -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <!-- Brand name -->
+          <a class="navbar-brand" href="index.html">Paula Dastres</a>
+        </div>
+        <!-- Navigation menu links -->
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
+          </ul>
+          <!-- Email icon on the right -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="mailto:pfdastres@gmail.com"><span class="fa fa-envelope fa-lg"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro section with circular image and vertically centered text -->
+    <div style="display: flex; align-items: center; justify-content: flex-start; margin-top: 40px; flex-wrap: wrap;">
+
+      <!-- Circular profile image -->
+      <div style="flex: 0 0 260px; text-align: left; margin: 10px 30px 10px 0px;">
+        <img src="files/banner.jpeg" 
+             alt="Profile photo"
+             style="width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 3px solid #ccc;">
+      </div>
+
+      <!-- Name and info -->
+      <div style="flex: 1 1 300px; max-width: 600px; margin: 10px;">
+        <div style="margin-top: 60px;">
+          <h1 style="margin-top: 0;">Paula Dastres</h1>
+          <p style="font-size: 16px; margin-bottom: 5px;">PhD Student in Economics</p>
+          <p style="font-size: 16px; margin-bottom: 5px;">University of Wisconsin–Madison</p>
+          <p style="font-size: 16px;">Development · Gender Inequality · Labor</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section header -->
+    <div id="header">
+      <h1 class="title toc-ignore">About Me</h1>
+    </div>
+
+    <!-- About Me paragraph -->
+    <p><font size="3">
+      Welcome! I’m a PhD student in Economics at the University of Wisconsin–Madison. 
+      My research lies at the intersection of development economics, labor markets, and gender inequality. 
+      I’m especially interested in how social norms and structural barriers shape individuals’ decisions, 
+      particularly for women in low-income contexts. I aim to use field experiments and experimental economics 
+      to study questions of discrimination and decision-making, with a focus on real-world mechanisms behind persistent inequalities.
+      <br><br>
+      Before starting my PhD, I completed a Master of Arts in Public Policy with a Certificate in Research Methods at the University 
+      of Chicago’s Harris School of Public Policy.
+    </font></p>
+
+  </div> <!-- End main-container -->
+
+  <!-- Load required scripts -->
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+  <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+  <script>
+    if (window.hljs) {
+      hljs.configure({languages: []});
+      hljs.initHighlightingOnLoad();
+    }
+  </script>
+</body>
+</html>
