@@ -14,7 +14,11 @@
 
   <!-- General styling for layout and formatting -->
   <style>
-    .main-container { max-width: 940px; margin-left: auto; margin-right: auto; }
+    .main-container {
+      max-width: 940px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     img { max-width: 100%; }
     h1 { font-size: 34px; }
@@ -27,15 +31,27 @@
     code { color: inherit; background-color: rgba(0, 0, 0, 0.04); }
     pre:not([class]) { background-color: white }
 
-    /* Fix hero banner to top */
+    /* Transparent navbar over hero image */
+    .navbar.navbar-default {
+      background-color: transparent;
+      border: none;
+      z-index: 1000;
+    }
+
+    .navbar.navbar-default .navbar-brand,
+    .navbar.navbar-default .navbar-nav > li > a {
+      color: white;
+    }
+
+    .navbar.navbar-default .navbar-nav > li > a:hover {
+      color: #ddd;
+    }
+
+    /* Hero banner image (not fixed) */
     .hero-banner {
       width: 100%;
       height: 350px;
       overflow: hidden;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1030;
     }
 
     .hero-banner img {
@@ -45,27 +61,16 @@
       object-position: center;
     }
 
-    /* Move navbar below hero banner */
-    .navbar-fixed-top {
-      top: 350px;
-      z-index: 1020;
-    }
-
-    /* Push content below both fixed elements */
-    .content-below-fixed {
-      margin-top: 410px; /* 350px hero + 60px navbar */
+    /* Space to account for fixed navbar */
+    body {
+      padding-top: 60px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Hero Banner (fixed at top) -->
-  <div class="hero-banner">
-    <img src="files/hero_banner.png" alt="Hero banner">
-  </div>
-
-  <!-- Navigation Bar (fixed below banner) -->
+  <!-- Navigation Bar (fixed and transparent) -->
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -87,8 +92,13 @@
     </div>
   </div>
 
-  <!-- Main content starts here -->
-  <div class="container-fluid main-container content-below-fixed">
+  <!-- Hero Banner (scrolls with page) -->
+  <div class="hero-banner">
+    <img src="files/hero_banner.png" alt="Hero banner">
+  </div>
+
+  <!-- Main content -->
+  <div class="container-fluid main-container">
 
     <!-- Intro section with circular image and centered text -->
     <div style="display: flex; align-items: center; justify-content: flex-start; margin-top: 40px; flex-wrap: wrap;">
@@ -138,3 +148,4 @@
   </script>
 </body>
 </html>
+
